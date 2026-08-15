@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AURA — آئورا
+
+A modern, elegant, and fully-responsive RTL e-commerce experience for a contemporary
+women's fashion brand. Built as a production-quality portfolio project with Persian
+as the primary language.
+
+## Tech Stack
+
+- **Next.js 15** — App Router, RSC, typed routes
+- **TypeScript**
+- **Tailwind CSS v4** — design tokens via `@theme`
+- **Framer Motion** — subtle, calm micro-interactions
+- **Lucide React** — refined iconography
+- **next/font** — Vazirmatn (body), El Messiri (display), Cormorant Garamond (Latin logo)
+- **React Context** — lightweight cart with `localStorage` persistence
+
+## Features
+
+- Homepage — editorial hero, brand marquee, collections, featured grid, about teaser, newsletter
+- Shop — category filters + sorting (newest, price) with URL params
+- Product page — detail gallery (zoom views), color swatches, size picker, quantity, animated accordions, related items
+- Cart — quantity steppers, remove/clear, live totals, free-shipping progress hint
+- Collections, About, Contact (working form demo), 404
+- Sticky glass header, full-screen search overlay, mobile menu, add-to-cart toast
+- Fully RTL, mobile-first, WCAG-minded (aria labels, focus rings, logical properties)
+
+## Design System
+
+| Token        | Value      |
+| ------------ | ---------- |
+| `--color-cream` | `#F8F6F2` |
+| `--color-ink`   | `#1F1D1B` |
+| `--color-mute`  | `#8B8378` |
+| `--color-rose`  | `#B98A7D` |
+| `--color-sage`  | `#9AA18B` |
+
+Product imagery is generated art-directional SVG (see `scripts/generate-product-art.mjs`)
+so the site is fully self-contained with zero external image dependencies.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/                  # Routes (App Router)
+components/
+  layout/             # Header, footer, search overlay, toast
+  home/               # Homepage sections
+  product/            # Product card, gallery, info
+  shop/  cart/  contact/
+  ui/                 # Container, Button, Reveal, SectionHeading
+context/              # Cart context
+data/                 # Products, collections, site config
+types/                # Shared TypeScript types
+lib/                  # Utilities
+public/images/        # Generated SVG artwork
+scripts/              # SVG art generator
+```

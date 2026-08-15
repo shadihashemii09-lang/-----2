@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9e7e3"/>
+      <stop offset="1" stop-color="#F8F6F2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="rgba(255, 255, 255, 0.55)"/>
+      <stop offset="1" stop-color="rgba(255, 255, 255, 0)"/>
+    </radialGradient>
+    <radialGradient id="crop" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.75" stop-color="rgba(216, 215, 210, 0.55)"/>
+      <stop offset="1" stop-color="rgba(197, 195, 190, 0.5)"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#glow)"/>
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="rgba(216, 215, 210, 0.6)" stroke-width="1"/>
+  
+  <g transform="translate(400 500) scale(1)">
+    <ellipse cx="0" cy="302" rx="185" ry="15" fill="rgba(31, 29, 27, 0.1)" filter="url(#blur)"/>
+    <path d="M -92 -195 C -96 -40 -118 90 -152 175 L -154 285 C -154 298 -122 298 -118 286 L -86 190 C -78 90 -52 10 -38 -55 C -50 -130 -62 -180 -92 -195 Z" fill="var(--garment)"  stroke="#2A2723" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M 92 -195 C 96 -40 118 90 152 175 L 154 285 C 154 298 122 298 118 286 L 86 190 C 78 90 52 10 38 -55 C 50 -130 62 -180 92 -195 Z" fill="var(--garment)"  stroke="#2A2723" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M -96 -222 C 0 -236 96 -222 96 -222 L 94 -198 C 0 -210 -94 -198 -94 -198 Z" fill="#f2f2f2"  stroke="#2A2723" stroke-width="5.5" stroke-linejoin="round"/>
+    
+    <path d="M 0 -200 C 0 -160 -34 -105 -40 -58" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 -200 C 0 -160 34 -105 40 -58" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -104 -240 C 0 -256 104 -240 104 -240" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -120 110 L -104 105" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 120 110 L 104 105" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    
+  </g>
+  <rect width="100%" height="100%" filter="url(#grain)"/>
+  <text x="50%" y="966" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" letter-spacing="9" fill="rgba(31, 29, 27, 0.35)">A U R A</text>
+</svg>

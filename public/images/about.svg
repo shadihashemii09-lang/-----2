@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e5e5dd"/>
+      <stop offset="1" stop-color="#F8F6F2"/>
+    </linearGradient>
+    <radialGradient id="aglow" cx="0.5" cy="0.45" r="0.7">
+      <stop offset="0" stop-color="rgba(255, 255, 255, 0.5)"/>
+      <stop offset="1" stop-color="rgba(255, 255, 255, 0)"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#abg)"/>
+  <rect width="100%" height="100%" fill="url(#aglow)"/>
+  <ellipse cx="450" cy="620" rx="300" ry="240" fill="rgba(31, 29, 27, 0.07)" filter="url(#blur)"/>
+  <path d="M 180 380 C 280 300 420 300 470 380 C 520 460 610 470 720 420 C 770 610 700 760 500 800 C 300 840 130 720 180 540 Z" fill="#c0c5b7" stroke="rgba(42, 39, 35, 0.35)" stroke-width="4"/>
+  <path d="M 280 520 C 360 480 460 500 540 570" fill="none" stroke="rgba(42, 39, 35, 0.45)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 300 640 C 380 600 480 610 560 680" fill="none" stroke="rgba(42, 39, 35, 0.3)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 220 720 C 260 780 420 820 560 790" fill="none" stroke="rgba(42, 39, 35, 0.25)" stroke-width="4" stroke-linecap="round"/>
+  <rect width="100%" height="100%" filter="url(#grain)"/>
+</svg>

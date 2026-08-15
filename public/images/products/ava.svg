@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e7e4de"/>
+      <stop offset="1" stop-color="#F8F6F2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="rgba(255, 255, 255, 0.55)"/>
+      <stop offset="1" stop-color="rgba(255, 255, 255, 0)"/>
+    </radialGradient>
+    <radialGradient id="crop" cx="0.5" cy="0.5" r="0.75">
+      <stop offset="0.75" stop-color="rgba(211, 208, 200, 0.55)"/>
+      <stop offset="1" stop-color="rgba(188, 184, 174, 0.5)"/>
+    </radialGradient>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.05"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  <rect width="100%" height="100%" fill="url(#glow)"/>
+  <rect x="40" y="40" width="720" height="920" fill="none" stroke="rgba(211, 208, 200, 0.6)" stroke-width="1"/>
+  
+  <g transform="translate(400 500) scale(1)">
+    <ellipse cx="0" cy="312" rx="192" ry="17" fill="rgba(31, 29, 27, 0.1)" filter="url(#blur)"/>
+    <path d="M -122 -180 C -56 -198 56 -198 122 -180 C 140 -120 150 -30 152 70 C 154 180 150 230 148 275 C 130 305 -130 305 -148 275 C -150 230 -154 180 -152 70 C -150 -30 -140 -120 -122 -180 Z" fill="var(--garment)"  stroke="#2A2723" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M -122 -180 C -158 -128 -166 -30 -162 60 C -160 150 -148 196 -134 200 C -132 168 -134 60 -126 -20 C -118 -92 -110 -142 -122 -180 Z" fill="var(--garment)" opacity="0.55" stroke="#2A2723" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M 122 -180 C 158 -128 166 -30 162 60 C 160 150 148 196 134 200 C 132 168 134 60 126 -20 C 118 -92 110 -142 122 -180 Z" fill="var(--garment)" opacity="0.55" stroke="#2A2723" stroke-width="5.5" stroke-linejoin="round"/>
+    <path d="M -140 -140 Q -150 -20 -146 120" fill="none" stroke="rgba(42, 39, 35, 0.5)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 140 -140 Q 150 -20 146 120" fill="none" stroke="rgba(42, 39, 35, 0.5)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -110 -172 C 0 -190 110 -172 110 -172" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -108 -170 L -58 -122 L -30 -82" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 108 -170 L 58 -122 L 30 -82" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 -82 L 0 252" fill="none" stroke="rgba(42, 39, 35, 0.6)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="0" cy="-40" r="5.5" fill="#eae9e9" stroke="#2A2723" stroke-width="3"/><circle cx="0" cy="30" r="5.5" fill="#eae9e9" stroke="#2A2723" stroke-width="3"/><circle cx="0" cy="100" r="5.5" fill="#eae9e9" stroke="#2A2723" stroke-width="3"/><circle cx="0" cy="170" r="5.5" fill="#eae9e9" stroke="#2A2723" stroke-width="3"/>
+  </g>
+  <rect width="100%" height="100%" filter="url(#grain)"/>
+  <text x="50%" y="966" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" letter-spacing="9" fill="rgba(31, 29, 27, 0.35)">A U R A</text>
+</svg>
